@@ -1,0 +1,140 @@
+baseURL = "https://zen-demo.xdeb.org/"
+googleAnalytics = "G-PXZ9M9CF7"
+title = "Podcast la variática"
+theme = "github.com/frjo/hugo-theme-zen/v5"
+languageCode = "es"       # Establece el código de idioma (solo necesario para sitios no multilingües).
+defaultContentLanguage = "es"
+pluralizeListTitles = false
+removePathAccents = true
+rssLimit = 20
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputFormats.SearchIndex]
+mediaType = "application/json"
+baseName = "searchindex"
+isPlainText = true
+notAlternative = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON", "SearchIndex"]
+  section = ["HTML", "RSS", "JSON"]
+
+[pagination]
+  pagerSize = 10
+  path = "page"
+
+[params]
+alpine = true                # Agrega AlpineJS, por defecto es false.
+cookieConsent = true         # Mostrar formulario de consentimiento de cookies, por defecto false.
+contact = "yordemblo@gmail.com"
+dateformat = "January 2, 2006"  # Formato de fecha, por defecto "2 January, 2006"
+description = "El podcast de la variática más escuchado del mundo" # Usada en etiquetas meta y JSON-LD
+favicon = "apple-touch-icon.png"     # Ruta relativa al favicon en el feed JSON, sin barra inicial.
+feedlinks = true             # Mostrar enlaces al feed en el pie de página.
+footer = ""
+icon = "apple-touch-icon.png"       # Ruta relativa al ícono para el feed JSON y JSON-LD.
+image = "apple-touch-icon.png"      # Ruta relativa a imagen del sitio para JSON-LD.
+imageMaxWidth = 400         # Ancho máximo para imágenes agregadas con shortcode figure.
+internalPagination = true   # Usar paginación interna de Hugo, por defecto false.
+jquery = true               # Agregar jQuery, por defecto false.
+languageDir = "ltr"         # Establece ltr o rtl, por defecto ltr.
+logo = false                # Desactiva el logo, por defecto es true.
+mainSections = ["blog", "podcast"]   # Secciones mostradas en la página principal.
+math = true                 # Habilitar tipografía matemática con KaTeX, por defecto false.
+menuInHeader = false        # Mover el menú principal al encabezado, por defecto false.
+microUsername = ""          # Tu nombre de usuario en micro.blog.
+mobileMenu = true           # Habilitar menú móvil en pantallas pequeñas, por defecto false.
+mobileMenuOutline = true    # Botón de menú móvil con contorno, por defecto false.
+piwikSiteId = ""            # ID del sitio en Matomo.
+piwikTrackerUrl = ""        # URL de Matomo, sin esquema ni barra final.
+plausibleSiteID = ""        # ID o dominio en Plausible.
+plausibleTrackerURL = ""    # URL de Plausible, sin esquema ni barra final. Por defecto "plausible.io/…"
+poweredby = true            # Mostrar "powered by Hugo" en el pie de página.
+privacyPolicyUrl = "/pages/politica-privacidad/"  # Enlace en el formulario de cookies.
+relatedposts = true         # Mostrar "También te puede interesar", por defecto false.
+sassTranspiler = "dartsass" # Transpilador Sass a usar, por defecto "libsass".
+searchLimit = 20            # Máximo de resultados de búsqueda, por defecto 20.
+sidebar = false             # Mostrar barra lateral a la derecha, por defecto false.
+siteName = true             # Ocultar visualmente el nombre del sitio, por defecto true.
+submitted = true            # Mostrar autor e información de fecha en una entrada.
+themeColor = ""             # Valor en hexadecimal del color del tema, por defecto "#ffffff".
+umbrella = true             # Agregar Umbrella JS, por defecto false.
+
+  [params.author]
+  name = "Ronny Gonzalez"                    # Tu nombre
+  url = "https://xdeb.org"
+  avatar = ""                                # ruta/a/una-imagen.jpg
+
+  [params.podcast]
+  title = ""                                 # * Título del feed, por defecto el título del sitio (iTunes).
+  description = ""                           # * Descripción del feed (iTunes).
+  image = ""                                 # * Imagen del feed en assets (iTunes).
+  explicit = false                           # Contenido explícito, por defecto false.
+  author = ""                                # Autor del podcast (iTunes).
+  lang = ""                                  # Idioma del podcast (por defecto el del sitio).
+  block = "no"                               # Bloquear el feed en iTunes, por defecto "no".
+  complete = "no"                            # Marcar el feed como completo, por defecto "no".
+  type = "episodic"                          # Tipo de podcast, por defecto "episodic".
+  newfeed = ""                               # Nueva URL del feed, si cambias de dominio.
+  cdn = ""                                   # URL del CDN, sin barra final.
+  local = false                              # ¿Audios locales o remotos? Por defecto true (local).
+  preload = "metadata"                       # preload para etiqueta audio HTML5, por defecto "metadata".
+
+    [params.podcast.category]
+    name = ""                                # * Categoría del feed (iTunes).
+    subcategories = []                       # Subcategorías (iTunes).
+
+    [params.podcast.owner]
+    name = ""                                # Nombre del propietario (iTunes).
+    email = ""                               # Correo del propietario (iTunes).
+
+params.blogSections = ["blog"]               # Secciones cuyo schema.org será @type: BlogPosting.
+params.breadcrumbSections = ["blog", "podcast"] # Secciones con JSON-LD tipo BreadcrumbListing.
+
+[languages]
+  [languages.es]
+  weight = 1
+  languageName = "Español"
+  languageCode = "es"
+
+    [[languages.es.menu.main]]
+    Name = "Inicio"
+    weight = -10
+    pageRef = "/"
+
+    [[languages.es.menu.main]]
+    Name = "Blog"
+    weight = 2
+    pageRef = "/blog/"
+
+    [[languages.es.menu.main]]
+    Name = "Podcast"
+    weight = 4
+    pageRef = "/podcast/"
+
+    [[languages.es.menu.main]]
+    Name = "Productos"
+    weight = 6
+    pageRef = "/products/"
+
+    [[languages.es.menu.main]]
+    Name = "Misc"
+    weight = 8
+    pageRef = "/misc/"
+
+    [[languages.es.menu.main]]
+    Name = "Buscar"
+    weight = 10
+    pageRef = "/search/"
+
+    [[languages.es.menu.main]]
+    Name = "Contacto"
+    weight = 12
+    pageRef = "/contact/"

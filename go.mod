@@ -1,7 +1,5 @@
-module github.com/frjo/zen-demo
+module github.com/RonnyG2121/mi-proyecto-podcast
 
-go 1.24
+go 1.24.1
 
-toolchain go1.24.1
-
-require github.com/frjo/hugo-theme-zen/v5 v5.4.0 // indirect
+require github.com/frjo/hugo-theme-zen/v5 v5.4.1 // indirect
